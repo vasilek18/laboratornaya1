@@ -2,7 +2,7 @@ import math
 import re
 
 
-# Лексер: разбиваем строку на токены (числа, cos, ==, + - * / и скобки)
+
 def tokeni(text):
     text = text.replace(" ", "")
     tokens = re.findall(r"\d+\.?\d*|\.\d+|cos|==|[-+*/()]", text)
@@ -11,8 +11,7 @@ def tokeni(text):
     return tokens
 
 
-# Парсер + вычисление. Приоритет (от низшего к высшему):
-# ==  ->  + -  ->  * /  ->  унарный минус  ->  числа, скобки, cos
+
 def compare():
     left = expr()
     while tokens and tokens[0] == "==":
